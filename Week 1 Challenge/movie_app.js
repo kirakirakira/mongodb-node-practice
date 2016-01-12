@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     engines = require('consolidate'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser')
 
 app.engine('html', engines.nunjucks);
 app.set('view engine', 'html');
@@ -62,7 +62,7 @@ app.post('/movies', function(req, res, next) {
                 'year': year,
                 'imdb': imdb
             };
-            
+
             // To insert into database
             // https://docs.mongodb.org/getting-started/node/insert/?_ga=1.190417963.1647530439.1452531400
             collection.insert(movie, function(err, result) {
