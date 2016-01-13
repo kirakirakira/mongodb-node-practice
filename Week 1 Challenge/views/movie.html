@@ -14,9 +14,13 @@
         <div id="movie_list">
             <p id="no_movies">No movies added yet.</p>
             <ul>
-                <li>{{title}}</li>
-                <li>{{year}}</li>
-                <li>{{imdb}}</li>
+                {% for film in movie %} 
+                <li>{{film.title}}</li>
+                <li>{{film.year}}</li>
+                <li>{{film.imdb}}</li>
+                {% else %}
+                <li>No movies found.</li>
+                {% endfor %}
             </ul>
         </div>
         
