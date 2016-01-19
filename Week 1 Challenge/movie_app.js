@@ -34,7 +34,6 @@ MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
 
     app.get('/', function(req, res) {
-
         db.collection('movie_collection').find({}).toArray(function(err, docs) {
             res.render('movie', {
                 'movie': docs

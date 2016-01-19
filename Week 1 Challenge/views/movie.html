@@ -1,5 +1,19 @@
 <html>
     <body>
+        <head>
+            <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+            <style>
+                body {
+                    font-family: 'Ubuntu', sans-serif;
+                    font-weight: 400;
+                }
+                
+                #eachmovie {
+
+                }
+            </style>
+            
+        </head>
 
         <h1>Movie List Maker!</h1>
 
@@ -12,14 +26,15 @@
         
         <h2>Movie List</h2>
         <div id="movie_list">
-            <p id="no_movies">No movies added yet.</p>
             <ul>
-                {% for film in movie %} 
-                <li>{{film.title}}</li>
-                <li>{{film.year}}</li>
-                <li>{{film.imdb}}</li>
+                {% for film in movie %}
+                <div id="eachmovie">
+                <p>{{film.title}}: {{film.year}} {{film.imdb}}</p>
+                <!--<li>{{film.year}}</li>-->
+                <!--<li>{{film.imdb}}</li>-->
                 {% else %}
                 <li>No movies found.</li>
+                </div>
                 {% endfor %}
             </ul>
         </div>
